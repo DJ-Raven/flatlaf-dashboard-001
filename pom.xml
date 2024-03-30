@@ -18,9 +18,9 @@
         <dependency>
             <groupId>raven.swing</groupId>
             <artifactId>swing-blur-background</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.2</version>
             <scope>system</scope>
-            <systemPath>${basedir}/library/swing-blur-background-1.0.0.jar</systemPath>
+            <systemPath>${basedir}/library/swing-blur-background-1.0.2.jar</systemPath>
         </dependency>
 
         <dependency>
@@ -29,6 +29,14 @@
             <version>1.5.0</version>
             <scope>system</scope>
             <systemPath>${basedir}/library/swing-glasspane-popup-1.5.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>raven.chart</groupId>
+            <artifactId>swing-chart</artifactId>
+            <version>1.4.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/library/swing-chart-1.1.0.jar</systemPath>
         </dependency>
 
         <dependency>

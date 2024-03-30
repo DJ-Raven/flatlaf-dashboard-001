@@ -6,6 +6,7 @@ import raven.drawer.component.header.SimpleHeader;
 import raven.drawer.component.header.SimpleHeaderData;
 import raven.drawer.component.menu.*;
 import raven.drawer.component.menu.data.Item;
+import raven.forms.BlurDashboard;
 import raven.swing.AvatarIcon;
 import raven.swing.blur.BlurChild;
 import raven.swing.blur.style.GradientColor;
@@ -122,16 +123,16 @@ public class SystemMenu extends BlurChild {
                         if (ints.length == 1) {
                             int index = ints[0];
                             if (index == 0) {
-                                FormManager.getInstance().showForm("Dashboard Title", new JLabel("Dashboard", SwingConstants.CENTER));
+                                FormManager.getInstance().showFormWithBlur("Dashboard", new BlurDashboard());
                             }
-                        }else if(ints.length==2){
-                            int index=ints[0];
-                            int subIndex=ints[1];
-                            if(index==1){
-                                if(subIndex==0){
-                                    FormManager.getInstance().showForm("Inbox Title", new JLabel("Inbox", SwingConstants.CENTER));
-                                }else if(subIndex==1){
-                                    FormManager.getInstance().showForm("Read Title", new JLabel("Read", SwingConstants.CENTER));
+                        } else if (ints.length == 2) {
+                            int index = ints[0];
+                            int subIndex = ints[1];
+                            if (index == 1) {
+                                if (subIndex == 0) {
+                                    FormManager.getInstance().showFormWithBlur("Blur Inbox Title", new JLabel("Inbox", SwingConstants.CENTER));
+                                } else if (subIndex == 1) {
+                                    FormManager.getInstance().showForm("Simple Read Title", new JLabel("Read", SwingConstants.CENTER));
                                 }
                             }
                         }
