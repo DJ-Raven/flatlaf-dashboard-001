@@ -2,6 +2,9 @@ package raven.components;
 
 import com.formdev.flatlaf.FlatClientProperties;
 import net.miginfocom.swing.MigLayout;
+import org.kordamp.ikonli.Ikon;
+import org.kordamp.ikonli.entypo.Entypo;
+import org.kordamp.ikonli.swing.FontIcon;
 import raven.drawer.component.header.SimpleHeader;
 import raven.drawer.component.header.SimpleHeaderData;
 import raven.drawer.component.menu.*;
@@ -66,43 +69,30 @@ public class SystemMenu extends BlurChild {
     private SimpleMenuOption getMenuOption() {
         raven.drawer.component.menu.data.MenuItem items[] = new raven.drawer.component.menu.data.MenuItem[]{
                 new Item.Label("MAIN"),
-                new Item("Dashboard", "dashboard.svg"),
+                new Item("Dashboard", "enty-air"),
                 new Item.Label("WEB APP"),
-                new Item("Email", "email.svg")
+                new Item("Email", "enty-archive")
                         .subMenu("Inbox")
                         .subMenu("Read")
                         .subMenu("Compost"),
-                new Item("Chat", "chat.svg"),
-                new Item("Calendar", "calendar.svg"),
+                new Item("Chat", "enty-newsletter"),
+                new Item("Calendar", "enty-notifications-off"),
                 new Item.Label("COMPONENT"),
-                new Item("Advanced UI", "ui.svg")
+                new Item("Advanced UI", "enty-old-phone")
                         .subMenu("Cropper")
                         .subMenu("Owl Carousel")
-                        .subMenu("Sweet Alert"),
-                new Item("Forms", "forms.svg")
-                        .subMenu("Basic Elements")
-                        .subMenu("Advanced Elements")
-                        .subMenu("SEditors")
-                        .subMenu("Wizard"),
-                new Item.Label("OTHER"),
-                new Item("Charts", "chart.svg")
-                        .subMenu("Apex")
-                        .subMenu("Flot")
-                        .subMenu("Sparkline"),
-                new Item("Icons", "icon.svg")
-                        .subMenu("Feather Icons")
-                        .subMenu("Flag Icons")
-                        .subMenu("Mdi Icons"),
-                new Item("Special Pages", "page.svg")
-                        .subMenu("Blank page")
-                        .subMenu("Faq")
-                        .subMenu("Invoice")
-                        .subMenu("Profile")
-                        .subMenu("Pricing")
-                        .subMenu("Timeline")
+                        .subMenu("Sweet Alert")
         };
-        return new SimpleMenuOption()
-                .setBaseIconPath("raven/menu")
+        return new SimpleMenuOption() {
+            @Override
+            public Icon buildMenuIcon(String path, float scale) {
+                FontIcon icon = new FontIcon();
+                icon.setIconColor(new Color(208, 208, 208));
+                icon.setIconSize(20);
+                icon.setIkon(Entypo.findByDescription(path));
+                return icon;
+            }
+        }
                 .setIconScale(0.5f)
                 .setMenus(items)
                 .setMenuStyle(new SimpleMenuStyle() {
@@ -137,8 +127,7 @@ public class SystemMenu extends BlurChild {
                             }
                         }
                     }
-                })
-                ;
+                });
 
     }
 
